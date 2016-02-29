@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requirement type:</strong>
+  <%= @match_requirement.requirement_type %>
+</p>
+
+<p>
+  <strong>Requirement:</strong>
+  <%= @match_requirement.requirement %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @match_requirement.importance %>
+</p>
+
+<%= link_to 'Edit', edit_match_requirement_path(@match_requirement) %> |
+<%= link_to 'Back', match_requirements_path %>

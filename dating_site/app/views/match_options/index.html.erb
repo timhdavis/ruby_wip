@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Match Options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Importance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @match_options.each do |match_option| %>
+      <tr>
+        <td><%= match_option.requirement_type %></td>
+        <td><%= match_option.requirement %></td>
+        <td><%= match_option.importance %></td>
+        <td><%= link_to 'Show', match_option %></td>
+        <td><%= link_to 'Edit', edit_match_option_path(match_option) %></td>
+        <td><%= link_to 'Destroy', match_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Match option', new_match_option_path %>

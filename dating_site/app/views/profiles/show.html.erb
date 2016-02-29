@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>About me:</strong>
+  <%= @profile.about_me %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+
+
+<br>
+
+<h3>Messages</h3>
+<%= render @profile.messages %>
+<h4>New message</h4>
+<%= form_for [@profile, @profile.messages.build] do |f| %>
+  <div class='field'>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+
+
+  <div class='field'>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<h3>Requirements</h3>
+<%= render @profile.requirements %>
+<h4>New Requirement</h4>
+<%= form_for [@profile, @profile.requirements.build] do |f| %>
+  <div class='field'>
+    <%= f.label :requirement_type %><br>
+    <%= f.text_field :requirement_type %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :requirement %><br>
+    <%= f.text_field :requirement %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :importance %><br>
+    <%= f.number_field :importance %>
+  </div>
+
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
+<% end %>

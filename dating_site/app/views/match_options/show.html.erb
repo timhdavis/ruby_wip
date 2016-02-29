@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @match_option.requirement_type %>
+</p>
+
+<p>
+  <strong>Requirement:</strong>
+  <%= @match_option.requirement %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @match_option.importance %>
+</p>
+
+<%= link_to 'Edit', edit_match_option_path(@match_option) %> |
+<%= link_to 'Back', match_options_path %>

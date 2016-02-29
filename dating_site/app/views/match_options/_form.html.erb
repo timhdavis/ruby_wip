@@ -1,0 +1,29 @@
+<%= form_for(@match_option) do |f| %>
+  <% if @match_option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@match_option.errors.count, "error") %> prohibited this match_option from being saved:</h2>
+
+      <ul>
+      <% @match_option.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :requirement_type %><br>
+    <%= f.text_field :requirement_type %>
+  </div>
+  <div class="field">
+    <%= f.label :requirement %><br>
+    <%= f.text_field :requirement %>
+  </div>
+  <div class="field">
+    <%= f.label :importance %><br>
+    <%= f.number_field :importance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
