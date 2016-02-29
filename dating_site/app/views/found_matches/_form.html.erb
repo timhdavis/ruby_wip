@@ -1,0 +1,21 @@
+<%= form_for(@found_match) do |f| %>
+  <% if @found_match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@found_match.errors.count, "error") %> prohibited this found_match from being saved:</h2>
+
+      <ul>
+      <% @found_match.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

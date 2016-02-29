@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Found Matches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @found_matches.each do |found_match| %>
+      <tr>
+        <td><%= found_match.name %></td>
+        <td><%= link_to 'View', profile_path(3) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Found match', new_found_match_path %>
+
+<br>
+<br>
+<br>
+
+<%= link_to 'Back', profile_path(2) %>
+<p></p>
+<%= link_to 'Home', root_path %>

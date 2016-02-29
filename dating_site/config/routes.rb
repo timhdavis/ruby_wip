@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :found_matches
+  resources :matches_founds
   resources :match_requirements
   resources :match_options
   resources :events

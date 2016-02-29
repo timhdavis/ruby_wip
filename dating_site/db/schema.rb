@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229182600) do
+ActiveRecord::Schema.define(version: 20160229192216) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "found_matches", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +40,12 @@ ActiveRecord::Schema.define(version: 20160229182600) do
     t.integer  "importance"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "matches_founds", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
